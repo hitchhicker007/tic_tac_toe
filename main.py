@@ -28,7 +28,10 @@ def winning_condition(user):
             or (bord[6]==user and bord[7]==user and bord[8]==user) or (bord[3]==user and bord[4]==user and bord[5]==user) or (bord[1]==user and bord[4]==user and bord[7]==user)
             or (bord[0]==user and bord[4]==user and bord[8]==user) or (bord[2]==user and bord[4]==user and bord[6]==user)):
             winner_msg(user)
-
+            Button(root,text="Exit",bg="#ff2e2e", width=8,font=("bold",20),fg="white",command="exit").place(x=270,y=240)
+            Button(root,text="ReMatch",bg="#ff2e2e", width=8,font=("bold",20),fg="white",command=rematch).place(x=100,y=240)
+    
+    
 def winner_msg(i):
     label_3 = Label(root,bg="brown",fg="#5feb38",text="Match Finished", width=20,font=("bold",15))
     label_3.place(x=150,y=60)
@@ -44,6 +47,10 @@ def winner_msg(i):
     btn8["state"] = DISABLED
     btn9["state"] = DISABLED
     
+  
+def rematch():
+    root.destroy()
+    subprocess.call(["python","main.py"])
 
 def clicked(pos,a,b):
     global user,zeros,crosses,bord
