@@ -5,7 +5,7 @@ Tic tac toe game with well GUI. Built using python tkinter library.
 
 Contributions are always welcome!
 
-See [contributing.md](https://github.com/hitchhicker007/tic_tac_toe/blob/master/README.md) for ways to get started.
+See [contributing.md](https://github.com/hitchhicker007/tic_tac_toe/blob/master/contributing.md) for ways to get started.
 
 ### Requirements
 python3
