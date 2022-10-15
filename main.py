@@ -94,11 +94,17 @@ image = ImageTk.PhotoImage(Image.open("imgs/wood.jpg"))
 canvas.pack()
 canvas.create_image(0,0,anchor=NW,image=image)
 selectusr = Frame(root)
+
+selectusr_label = Label(selectusr,fg="red",text="Select The Mode", width=30,font=("bold",18))
+selectusr_label.grid(row=1, column=1, padx=40, pady=10)
+
 UvUbtn = Button(selectusr,text="User Vs User",width=20,font=("bold", 20),command=lambda: SelectUser(2))
-UvUbtn.pack()
+UvUbtn.grid(row=2, column=1, padx=10, pady=100)
 UvCbtn = Button(selectusr,text="User Vs Computer",width=20,font=("bold", 20),command=lambda: SelectUser(1))
-UvCbtn.pack()
+UvCbtn.grid(row=3, column=1, padx=10, pady=10)
+
 selectusr.pack()
+
 o = ImageTk.PhotoImage(Image.open("imgs/circle.jpg"))
 x = ImageTk.PhotoImage(Image.open("imgs/cross.jpg"))
 white = ImageTk.PhotoImage(Image.open("imgs/white.jpg"))
