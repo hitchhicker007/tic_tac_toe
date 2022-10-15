@@ -24,6 +24,7 @@ positions = [[80,100],[200,100],[320,100],[80,220],[200,220],[320,220],[80,340],
 root = Tk()
 center_window(500,500)
 root.title("Tic Tac Toe")
+root.resizable(False, False)
 
 def winning_condition(user):
     for i in range(0,len(bord)):
