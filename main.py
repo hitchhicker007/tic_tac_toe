@@ -45,6 +45,7 @@ def ResizeComps():
     UvCbtn.place(x = (_CURR_W/2)-(_BASE_W/2) + 90,y= (_CURR_H/2)-(_BASE_H/2) + 330)
     label_0.place(x = (_CURR_W/2)-(_BASE_W/2) + 90,y= (_CURR_H/2)-(_BASE_H/2) + 10)
     label_2.place(x = (_CURR_W/2)-(_BASE_W/2) + 200,y= (_CURR_H/2)-(_BASE_H/2) + 60)
+    #label_3.place(x=(_CURR_W/2)-(_BASE_W/2) + 150,y=(_CURR_H/2)-(_BASE_H/2) + 60)
     btn1.place(x = (_CURR_W/2)-(_BASE_W/2) + 80,y= (_CURR_H/2)-(_BASE_H/2) + 100)
     btn2.place(x = (_CURR_W/2)-(_BASE_W/2) + 200,y= (_CURR_H/2)-(_BASE_H/2) + 100)
     btn3.place(x = (_CURR_W/2)-(_BASE_W/2) + 320,y= (_CURR_H/2)-(_BASE_H/2) + 100)
@@ -109,10 +110,11 @@ def rematch():
     subprocess.call(["python","main.py"])
 
 def clicked(pos):
-    global user,zeros,crosses,bord,positions,plyrs
+    global user,zeros,crosses,bord,positions,plyrs,label_2
     if user==1 and not bord[pos-1]:
-        label_3 = Label(root,bg="brown",fg="#5feb38",text="User 2's turn", width=10,font=("bold",15))
-        label_3.place(x=(_CURR_W/2)-(_BASE_W/2) + 200,y=(_CURR_H/2)-(_BASE_H/2) + 60)
+        label_2.place_forget()
+        label_2 = Label(root,bg="brown",fg="#5feb38",text="User 2's turn", width=10,font=("bold",15))
+        label_2.place(x=(_CURR_W/2)-(_BASE_W/2) + 200,y=(_CURR_H/2)-(_BASE_H/2) + 60)
         #Button(root,width=110,height=110,bg='white',fg='white',image=o).place(x=(_CURR_W/2)-(_BASE_W/2) + a,y=(_CURR_H/2)-(_BASE_H/2) + b)
         btns[pos-1]["image"] = o
         bord[pos-1]=user
@@ -126,6 +128,7 @@ def clicked(pos):
             clicked(t)
 
     elif user==2 and not bord[pos-1]:
+        label_2.place_forget()
         label_2 = Label(root,bg="brown",fg="yellow",text="User 1's turn", width=10,font=("bold",15))
         label_2.place(x=(_CURR_W/2)-(_BASE_W/2) + 200,y=(_CURR_H/2)-(_BASE_H/2) + 60)
         #Button(root,width=110,height=110,bg='white',fg='white',image=x).place(x=a,y=b)
