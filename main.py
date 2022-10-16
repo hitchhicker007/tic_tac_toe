@@ -72,7 +72,7 @@ def ResizeWind(arg):
 
 
 root = Tk()
-#center_window(_BASE_W,_BASE_H)
+center_window(_BASE_W,_BASE_H)
 root.title("Tic Tac Toe")
 #root.resizable(False, False)
 root.bind('<Configure>',ResizeWind)
@@ -110,12 +110,11 @@ def rematch():
 
 def clicked(pos):
     global user,zeros,crosses,bord,positions,plyrs
-    if(user==1):
+    if user==1 and not bord[pos-1]:
         label_3 = Label(root,bg="brown",fg="#5feb38",text="User 2's turn", width=10,font=("bold",15))
         label_3.place(x=(_CURR_W/2)-(_BASE_W/2) + 200,y=(_CURR_H/2)-(_BASE_H/2) + 60)
         #Button(root,width=110,height=110,bg='white',fg='white',image=o).place(x=(_CURR_W/2)-(_BASE_W/2) + a,y=(_CURR_H/2)-(_BASE_H/2) + b)
         btns[pos-1]["image"] = o
-        btns[pos-1]["state"] = DISABLED
         bord[pos-1]=user
         if winning_condition(1):
             return
@@ -126,12 +125,11 @@ def clicked(pos):
                 t = random.randint(1,9)
             clicked(t)
 
-    else:
+    elif user==2 and not bord[pos-1]:
         label_2 = Label(root,bg="brown",fg="yellow",text="User 1's turn", width=10,font=("bold",15))
         label_2.place(x=(_CURR_W/2)-(_BASE_W/2) + 200,y=(_CURR_H/2)-(_BASE_H/2) + 60)
         #Button(root,width=110,height=110,bg='white',fg='white',image=x).place(x=a,y=b)
         btns[pos-1]["image"] = x
-        btns[pos-1]["state"] = DISABLED
         bord[pos-1]=user
         if winning_condition(2):
             return
@@ -217,19 +215,19 @@ selectusr_label.place(x=90,y=10)
 #UvUbtn.grid(row=1,column=0)
 UvUbtn.place(x=90+_CURR_W-_BASE_W,y=150+_CURR_H-_BASE_H)
 #UvCbtn.grid(row=2,column=0)
-UvCbtn.place(x=90,y=330)
+UvCbtn.place(x=_CURR_W-_BASE_W + 90,y=_CURR_H-_BASE_H + 330)
 selectusr.grid(row=0,column=0)
-label_0.place(x=90,y=10)
-label_2.place(x=200,y=60)
+label_0.place(x=_CURR_W-_BASE_W + 90,y=_CURR_H-_BASE_H + 10)
+label_2.place(x=_CURR_W-_BASE_W + 200,y=_CURR_H-_BASE_H + 60)
 
-btn1.place(x=80,y=100)
-btn2.place(x=200,y=100)
-btn3.place(x=320,y=100)
-btn4.place(x=80,y=220)
-btn5.place(x=200,y=220)
-btn6.place(x=320,y=220)
-btn7.place(x=80,y=340)
-btn8.place(x=200,y=340)
-btn9.place(x=320,y=340)
+btn1.place(x=_CURR_W-_BASE_W + 80,y=_CURR_H-_BASE_H + 100)
+btn2.place(x=_CURR_W-_BASE_W + 200,y=_CURR_H-_BASE_H + 100)
+btn3.place(x=_CURR_W-_BASE_W + 320,y=_CURR_H-_BASE_H + 100)
+btn4.place(x=_CURR_W-_BASE_W + 80,y=_CURR_H-_BASE_H + 220)
+btn5.place(x=_CURR_W-_BASE_W + 200,y=_CURR_H-_BASE_H + 220)
+btn6.place(x=_CURR_W-_BASE_W + 320,y=_CURR_H-_BASE_H + 220)
+btn7.place(x=_CURR_W-_BASE_W + 80,y=_CURR_H-_BASE_H + 340)
+btn8.place(x=_CURR_W-_BASE_W + 200,y=_CURR_H-_BASE_H + 340)
+btn9.place(x=_CURR_W-_BASE_W + 320,y=_CURR_H-_BASE_H + 340)
 
 root.mainloop()
