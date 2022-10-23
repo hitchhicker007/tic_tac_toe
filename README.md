@@ -15,25 +15,26 @@ See [contributing.md](https://github.com/hitchhicker007/tic_tac_toe/blob/master/
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git/)
 
 
-## Steps 
+## Steps
 
-1. In the command prompt/ terminal run the following commands 
-
+1. Clone the repository
 ```
-pip install tkinter
-pip install pillow
+git clone https://github.com/hitchhicker007/tic_tac_toe.git
 ```
 
-2. clone the repository 
-```
-git clone https://github.com/hitchhicker007/tic_tac_toe.git 
-```
-3. Go to the root folder 
+2. Go to the root folder
 
 ```
 cd tic_tac_toe
 ```
-4. Run the following command to get started 
+
+3. In the command prompt/ terminal run the following command
+
+```
+pip install -r requirements.txt
+```
+
+4. Run the following command to get started
 
 ```
 python main.py
